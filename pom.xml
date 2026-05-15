@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.niarchos</groupId>
-	<artifactId>portofolio_back-end</artifactId>
+	<artifactId>portfolio_back-end</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>portofolio_back-end</name>
+	<name>portfolio_back-end</name>
 	<description/>
 	<url/>
 	<licenses>

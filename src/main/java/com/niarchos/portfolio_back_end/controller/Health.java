@@ -1,4 +1,4 @@
-package com.niarchos.portofolio_back_end.controller;
+package com.niarchos.portfolio_back_end.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
