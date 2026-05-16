@@ -1,9 +1,10 @@
 package com.niarchos.portfolio_back_end.service;
 
-import com.niarchos.portfolio_back_end.dto.CertificateDto;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.niarchos.portfolio_back_end.dto.CertificateDto;
 
 @Service
 public class CertificateService {
@@ -18,7 +19,8 @@ public class CertificateService {
                         "CompTIA",
                         "In Progress",
                         "/assets/images/certificates/comptia-a-plus.webp",
-                        ""
+                        "",
+                        true
                 ),
                 new CertificateDto(
                         2L,
@@ -26,7 +28,8 @@ public class CertificateService {
                         "Self Study / Lab Practice",
                         "In Progress",
                         "/assets/images/certificates/networking.webp",
-                        ""
+                        "",
+                        true
                 ),
                 new CertificateDto(
                         3L,
@@ -34,9 +37,26 @@ public class CertificateService {
                         "Self Study / Homelab",
                         "In Progress",
                         "/assets/images/certificates/linux.webp",
-                        ""
+                        "",
+                        true
+                ),
+                new CertificateDto(
+                        4L,
+                        "Future Certificate",
+                        "To be decided",
+                        "Planned",
+                        "/assets/images/certificates/default.webp",
+                        "",
+                        false
                 )
         );
         // ================= END TEMP FAKE DATA =================
+    }
+
+    public List<CertificateDto> getTopCertificates() {
+        return getAllCertificates()
+                .stream()
+                .filter(CertificateDto::isTop)
+                .toList();
     }
 }

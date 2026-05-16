@@ -1,9 +1,10 @@
 package com.niarchos.portfolio_back_end.service;
 
-import com.niarchos.portfolio_back_end.dto.ExperienceDto;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.niarchos.portfolio_back_end.dto.ExperienceDto;
 
 @Service
 public class ExperienceService {
@@ -19,7 +20,8 @@ public class ExperienceService {
                         "2024",
                         "Present",
                         "Providing technical support, troubleshooting user issues, handling tickets, and assisting with IT operations.",
-                        "Jira, Windows, Linux, Networking"
+                        "Jira, Windows, Linux, Networking",
+                        true
                 ),
                 new ExperienceDto(
                         2L,
@@ -28,7 +30,8 @@ public class ExperienceService {
                         "2024",
                         "Present",
                         "Learning security monitoring concepts, QRadar basics, events, flows, and infrastructure health monitoring.",
-                        "QRadar, XClarity, Logs, Monitoring"
+                        "QRadar, XClarity, Logs, Monitoring",
+                        true
                 ),
                 new ExperienceDto(
                         3L,
@@ -37,9 +40,27 @@ public class ExperienceService {
                         "2026",
                         "Present",
                         "Building a Spring Boot backend for serving portfolio data to an Angular frontend.",
-                        "Java, Spring Boot, REST API"
+                        "Java, Spring Boot, REST API",
+                        true
+                ),
+                new ExperienceDto(
+                        4L,
+                        "Future Experience",
+                        "To be decided",
+                        "Future",
+                        "Future",
+                        "Placeholder for future work, learning, or project experience.",
+                        "To be decided",
+                        false
                 )
         );
         // ================= END TEMP FAKE DATA =================
+    }
+
+    public List<ExperienceDto> getTopExperience() {
+        return getAllExperience()
+                .stream()
+                .filter(ExperienceDto::isTop)
+                .toList();
     }
 }

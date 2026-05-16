@@ -1,9 +1,10 @@
 package com.niarchos.portfolio_back_end.service;
 
-import com.niarchos.portfolio_back_end.dto.HomelabDto;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.niarchos.portfolio_back_end.dto.HomelabDto;
 
 @Service
 public class HomelabService {
@@ -18,7 +19,8 @@ public class HomelabService {
                         "A small server used for learning Linux, networking, Docker, and backend deployment.",
                         "Linux, Docker, SSH",
                         "/assets/images/homelabs/home-server.webp",
-                        "In Progress"
+                        "In Progress",
+                        true
                 ),
                 new HomelabDto(
                         2L,
@@ -26,7 +28,8 @@ public class HomelabService {
                         "A practice lab for separating frontend, backend, and database services into different network zones.",
                         "VLANs, Firewall, Nginx",
                         "/assets/images/homelabs/network-lab.webp",
-                        "Planned"
+                        "Planned",
+                        true
                 ),
                 new HomelabDto(
                         3L,
@@ -34,9 +37,26 @@ public class HomelabService {
                         "A lab for deploying frontend and backend services with containers.",
                         "Docker, Docker Compose, Nginx",
                         "/assets/images/homelabs/docker-lab.webp",
-                        "In Progress"
+                        "In Progress",
+                        true
+                ),
+                new HomelabDto(
+                        4L,
+                        "Future Proxmox Lab",
+                        "Placeholder for a future virtualization lab.",
+                        "Proxmox, Linux, VMs",
+                        "/assets/images/homelabs/default.webp",
+                        "Planned",
+                        false
                 )
         );
         // ================= END TEMP FAKE DATA =================
+    }
+
+    public List<HomelabDto> getTopHomelabs() {
+        return getAllHomelabs()
+                .stream()
+                .filter(HomelabDto::isTop)
+                .toList();
     }
 }

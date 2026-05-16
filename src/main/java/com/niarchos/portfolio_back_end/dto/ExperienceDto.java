@@ -8,9 +8,10 @@ public class ExperienceDto {
     private String endDate;
     private String description;
     private String technologies;
+    private boolean top;
 
     public ExperienceDto(Long id, String role, String organization, String startDate,
-                         String endDate, String description, String technologies) {
+                         String endDate, String description, String technologies, boolean top) {
         this.id = id;
         this.role = role;
         this.organization = organization;
@@ -18,6 +19,7 @@ public class ExperienceDto {
         this.endDate = endDate;
         this.description = description;
         this.technologies = technologies;
+        this.top = top;
     }
 
     public Long getId() {
@@ -47,5 +49,8 @@ public class ExperienceDto {
     public String getTechnologies() {
         return technologies;
     }
-}
 
+    public boolean isTop() {
+        return top;
+    }
+}

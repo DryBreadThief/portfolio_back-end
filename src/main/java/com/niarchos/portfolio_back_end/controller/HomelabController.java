@@ -1,11 +1,12 @@
 package com.niarchos.portfolio_back_end.controller;
 
-import com.niarchos.portfolio_back_end.dto.HomelabDto;
-import com.niarchos.portfolio_back_end.service.HomelabService;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.niarchos.portfolio_back_end.dto.HomelabDto;
+import com.niarchos.portfolio_back_end.service.HomelabService;
 
 @RestController
 public class HomelabController {
@@ -19,5 +20,10 @@ public class HomelabController {
     @GetMapping("/api/homelabs")
     public List<HomelabDto> getAllHomelabs() {
         return homelabService.getAllHomelabs();
+    }
+
+    @GetMapping("/api/homelabs/top")
+    public List<HomelabDto> getTopHomelabs() {
+        return homelabService.getTopHomelabs();
     }
 }

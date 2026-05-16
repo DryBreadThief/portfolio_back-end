@@ -7,15 +7,17 @@ public class CertificateDto {
     private String issueDate;
     private String imageUrl;
     private String credentialUrl;
+    private boolean top;
 
     public CertificateDto(Long id, String title, String issuer, String issueDate,
-                          String imageUrl, String credentialUrl) {
+                          String imageUrl, String credentialUrl, boolean top) {
         this.id = id;
         this.title = title;
         this.issuer = issuer;
         this.issueDate = issueDate;
         this.imageUrl = imageUrl;
         this.credentialUrl = credentialUrl;
+        this.top = top;
     }
 
     public Long getId() {
@@ -41,5 +43,8 @@ public class CertificateDto {
     public String getCredentialUrl() {
         return credentialUrl;
     }
-}
 
+    public boolean isTop() {
+        return top;
+    }
+}

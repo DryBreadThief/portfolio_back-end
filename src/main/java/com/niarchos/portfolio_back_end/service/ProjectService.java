@@ -20,16 +20,18 @@ public class ProjectService {
                         "Angular, Spring Boot",
                         "/assets/images/projects/portfolio.webp",
                         "https://github.com/YOUR_USERNAME/portfolio-site",
-                        ""
+                        "",
+                        true
                 ),
                 new ProjectDto(
                         2L,
                         "Homelab Network",
-                        "Homelab setup for learning networking, servers, Docker, and secure deployment.",
+                        "Homelab setup for learning networking, servers, Docker, Nginx, and secure deployment.",
                         "Linux, Docker, Nginx",
                         "/assets/images/projects/homelab.webp",
                         "",
-                        ""
+                        "",
+                        true
                 ),
                 new ProjectDto(
                         3L,
@@ -38,9 +40,27 @@ public class ProjectService {
                         "Java, Spring Boot",
                         "/assets/images/projects/backend.webp",
                         "https://github.com/YOUR_USERNAME/portfolio-backend",
-                        ""
+                        "",
+                        true
+                ),
+                new ProjectDto(
+                        4L,
+                        "Future Project",
+                        "Placeholder for a future project.",
+                        "To be decided",
+                        "/assets/images/projects/default.webp",
+                        "",
+                        "",
+                        false
                 )
         );
         // ================= END TEMP FAKE DATA =================
+    }
+
+    public List<ProjectDto> getTopProjects() {
+        return getAllProjects()
+                .stream()
+                .filter(ProjectDto::isTop)
+                .toList();
     }
 }

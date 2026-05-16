@@ -21,4 +21,9 @@ public class ProjectController {
     public List<ProjectDto> getAllProjects() {
         return projectService.getAllProjects();
     }
+
+    @GetMapping("/api/projects/top")
+    public List<ProjectDto> getTopProjects() {
+        return projectService.getTopProjects();
+    }
 }

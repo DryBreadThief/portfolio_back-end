@@ -20,4 +20,9 @@ public class ExperienceController {
     public List<ExperienceDto> getAllExperience() {
         return experienceService.getAllExperience();
     }
+
+    @GetMapping("/api/experience/top")
+    public List<ExperienceDto> getTopExperience() {
+        return experienceService.getTopExperience();
+    }
 }

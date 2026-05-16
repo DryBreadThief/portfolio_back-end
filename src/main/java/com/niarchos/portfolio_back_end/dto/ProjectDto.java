@@ -8,9 +8,10 @@ public class ProjectDto {
     private String imageUrl;
     private String githubUrl;
     private String liveUrl;
+    private boolean top;
 
     public ProjectDto(Long id, String title, String description, String techStack,
-                      String imageUrl, String githubUrl, String liveUrl) {
+                      String imageUrl, String githubUrl, String liveUrl, boolean top) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -18,6 +19,7 @@ public class ProjectDto {
         this.imageUrl = imageUrl;
         this.githubUrl = githubUrl;
         this.liveUrl = liveUrl;
+        this.top = top;
     }
 
     public Long getId() {
@@ -46,5 +48,9 @@ public class ProjectDto {
 
     public String getLiveUrl() {
         return liveUrl;
+    }
+
+    public boolean isTop() {
+        return top;
     }
 }
